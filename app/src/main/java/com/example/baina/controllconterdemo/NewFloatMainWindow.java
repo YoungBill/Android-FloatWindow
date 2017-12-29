@@ -98,6 +98,7 @@ public class NewFloatMainWindow {
 
     private void initFloatView(Context context) {
         mFloatView = new FloatView(context, new OnFlingListener() {
+
             @Override
             public void onSlideUp() {
                 if (mTouchLocation != LOCATION_BOTTOM)
