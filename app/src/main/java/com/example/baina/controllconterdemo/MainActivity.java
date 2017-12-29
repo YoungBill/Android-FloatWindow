@@ -43,7 +43,6 @@ public class MainActivity extends Activity {
                             Toast.makeText(MainActivity.this, "权限授予失败，无法开启悬浮窗", Toast.LENGTH_SHORT).show();
                         } else {
                             //启动FxService
-                            FloatMainWindow.getFloatMessagerMainWindow(MainActivity.this, null, FloatMainWindow.LOCATION_LEFT);
                         }
                     }
                     break;
@@ -56,7 +55,7 @@ public class MainActivity extends Activity {
         View contentView = inflater.inflate(R.layout.layout_pop, null);
         switch (view.getId()) {
             case R.id.leftBt:
-                final NewFloatMainWindow leftFloatMainWindow = NewFloatMainWindow.getFloatMainWindow(MainActivity.this, NewFloatMainWindow.LOCATION_LEFT, contentView);
+                final FloatMainWindow leftFloatMainWindow = FloatMainWindow.getFloatMainWindow(MainActivity.this, FloatMainWindow.LOCATION_LEFT, contentView);
                 contentView.findViewById(R.id.testBt).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -71,7 +70,7 @@ public class MainActivity extends Activity {
                 });
                 break;
             case R.id.rightBt:
-                final NewFloatMainWindow rightFloatMainWindow = NewFloatMainWindow.getFloatMainWindow(MainActivity.this, NewFloatMainWindow.LOCATION_RIGHT, contentView);
+                final FloatMainWindow rightFloatMainWindow = FloatMainWindow.getFloatMainWindow(MainActivity.this, FloatMainWindow.LOCATION_RIGHT, contentView);
                 contentView.findViewById(R.id.testBt).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -86,7 +85,7 @@ public class MainActivity extends Activity {
                 });
                 break;
             case R.id.bottomBt:
-                final NewFloatMainWindow bottomFloatMainWindow = NewFloatMainWindow.getFloatMainWindow(MainActivity.this, NewFloatMainWindow.LOCATION_BOTTOM, contentView);
+                final FloatMainWindow bottomFloatMainWindow = FloatMainWindow.getFloatMainWindow(MainActivity.this, FloatMainWindow.LOCATION_BOTTOM, contentView);
                 contentView.findViewById(R.id.testBt).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
