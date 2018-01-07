@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
                         if (!Settings.canDrawOverlays(this)) {
                             Toast.makeText(MainActivity.this, "权限授予失败，无法开启悬浮窗", Toast.LENGTH_SHORT).show();
                         } else {
-                            //启动FxService
+                            // TODO: 18/1/7 已经授权
                         }
                     }
                     break;
@@ -53,51 +53,44 @@ public class MainActivity extends Activity {
     public void OnClick(View view) {
         LayoutInflater inflater = LayoutInflater.from(MainActivity.this);
         View contentView = inflater.inflate(R.layout.layout_pop, null);
+        //这是第二种方法得到弹窗，如下右边，底部位置的弹窗就是这种办法得到的
+        final FloatWindow floatWindow = FloatWindow.getFloatWindow(MainActivity.this, contentView);
+        contentView.findViewById(R.id.testBt).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                floatWindow.getPopupWindow().dismiss();
+                Toast.makeText(MainActivity.this, "点我啊！", Toast.LENGTH_SHORT).show();
+            }
+        });
+        contentView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                floatWindow.getPopupWindow().dismiss();
+            }
+        });
         switch (view.getId()) {
             case R.id.leftBt:
-                final FloatMainWindow leftFloatMainWindow = FloatMainWindow.getFloatMainWindow(MainActivity.this, FloatMainWindow.LOCATION_LEFT, contentView);
+                //这是第一种方法得到弹窗
+                final FloatWindow leftFloatWindow = FloatWindow.getFloatWindow(MainActivity.this, FloatWindow.LOCATION_LEFT, contentView);
                 contentView.findViewById(R.id.testBt).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "你点击了弹出窗的按钮", Toast.LENGTH_SHORT).show();
+                        leftFloatWindow.getPopupWindow().dismiss();
+                        Toast.makeText(MainActivity.this, "点我啊！", Toast.LENGTH_SHORT).show();
                     }
                 });
                 contentView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        leftFloatMainWindow.getPopupWindow().dismiss();
+                        leftFloatWindow.getPopupWindow().dismiss();
                     }
                 });
                 break;
             case R.id.rightBt:
-                final FloatMainWindow rightFloatMainWindow = FloatMainWindow.getFloatMainWindow(MainActivity.this, FloatMainWindow.LOCATION_RIGHT, contentView);
-                contentView.findViewById(R.id.testBt).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "你点击了弹出窗的按钮", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                contentView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        rightFloatMainWindow.getPopupWindow().dismiss();
-                    }
-                });
+                floatWindow.setTouchLocation(FloatWindow.LOCATION_RIGHT);
                 break;
             case R.id.bottomBt:
-                final FloatMainWindow bottomFloatMainWindow = FloatMainWindow.getFloatMainWindow(MainActivity.this, FloatMainWindow.LOCATION_BOTTOM, contentView);
-                contentView.findViewById(R.id.testBt).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "你点击了弹出窗的按钮", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                contentView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        bottomFloatMainWindow.getPopupWindow().dismiss();
-                    }
-                });
+                floatWindow.setTouchLocation(FloatWindow.LOCATION_BOTTOM);
                 break;
         }
     }
