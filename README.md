@@ -17,7 +17,7 @@ NewFloatMainWindow.getFloatMainWindow(MainActivity.this, NewFloatMainWindow.LOCA
 <br/>
 ## readme-en
 Android custom floating window
-<br/>The principle is very simple, is to borrow WindowManager this management class to achieve.
+The principle is very simple, is to borrow WindowManager this management class to achieve.
 <br/>
 1. First, add permission to use AndroidManifest.xml:uses-permission android: name = "android.permission.SYSTEM_ALERT_WINDOW"
 <br/>
