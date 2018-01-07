@@ -59,7 +59,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 floatWindow.getPopupWindow().dismiss();
-                Toast.makeText(MainActivity.this, "点我啊！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, R.string.pressme, Toast.LENGTH_SHORT).show();
             }
         });
         contentView.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +76,7 @@ public class MainActivity extends Activity {
                     @Override
                     public void onClick(View view) {
                         leftFloatWindow.getPopupWindow().dismiss();
-                        Toast.makeText(MainActivity.this, "点我啊！", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, R.string.pressme, Toast.LENGTH_SHORT).show();
                     }
                 });
                 contentView.setOnClickListener(new View.OnClickListener() {

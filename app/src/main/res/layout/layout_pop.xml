@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorSelf">
+    android:background="@color/colorPopWindow">
 
     <Button
         android:id="@+id/testBt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Hello World!\n我是弹出框" />
+        android:text="@string/pressme"
+        android:textAllCaps="false" />
 
 </RelativeLayout>

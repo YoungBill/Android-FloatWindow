@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">浮动窗口</string>
+    <string name="left">左边</string>
+    <string name="right">右边</string>
+    <string name="bottom">底部</string>
+    <string name="pressme">点我啊!</string>
+</resources>

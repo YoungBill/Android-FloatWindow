@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">ControllConterDemo</string>
+    <string name="app_name">FloatWindow</string>
+    <string name="left">left</string>
+    <string name="right">right</string>
+    <string name="bottom">bottom</string>
+    <string name="pressme">press me!</string>
 </resources>
