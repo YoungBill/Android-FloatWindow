@@ -14,3 +14,6 @@ View contentView = inflater.inflate(R.layout.layout_pop, null);
 NewFloatMainWindow.getFloatMainWindow(MainActivity.this, NewFloatMainWindow.LOCATION_LEFT, contentView);
 <br/>
 3.轻松实现弹窗
+## preview
+<img src="https://github.com/YoungBill/FloatWindow/blob/master/Screenshots/preview.gif"/><br/>
+## 结束 
