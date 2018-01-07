@@ -26,7 +26,6 @@ Android custom floating window
 <br/>NewFloatMainWindow.getFloatMainWindow (MainActivity.this, NewFloatMainWindow.LOCATION_LEFT, contentView);
 <br/>
 3.Pop-up window easily
-3.轻松实现弹窗
 ## preview
 <img src="https://github.com/YoungBill/FloatWindow/blob/master/Screenshots/preview.gif"/><br/>
 ## 结束 
