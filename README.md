@@ -21,7 +21,9 @@ Android custom floating window
 <br/>
 1. First, add permission to use AndroidManifest.xml:uses-permission android: name = "android.permission.SYSTEM_ALERT_WINDOW"
 <br/>
-2. Two lines of code to achieve custom pop-up viewView contentView = inflater.inflate (R.layout.layout_pop, null);NewFloatMainWindow.getFloatMainWindow (MainActivity.this, NewFloatMainWindow.LOCATION_LEFT, contentView);
+2. Two lines of code to achieve custom pop-up 
+<br/>viewView contentView = inflater.inflate (R.layout.layout_pop, null);
+<br/>NewFloatMainWindow.getFloatMainWindow (MainActivity.this, NewFloatMainWindow.LOCATION_LEFT, contentView);
 <br/>
 3.Pop-up window easily
 3.轻松实现弹窗
