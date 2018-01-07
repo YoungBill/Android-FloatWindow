@@ -15,6 +15,7 @@ View contentView = inflater.inflate(R.layout.layout_pop, null);
 <br/>
 NewFloatMainWindow.getFloatMainWindow(MainActivity.this, NewFloatMainWindow.LOCATION_LEFT, contentView);
 <br/>
+3.实现悬浮窗如此简单
 ## readme-en
 Android custom floating window
 The principle is very simple, is to borrow WindowManager this management class to achieve.
