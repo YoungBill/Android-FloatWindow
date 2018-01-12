@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ControllConterDemo.iml" filepath="$PROJECT_DIR$/ControllConterDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Android-FloatWindow.iml" filepath="$PROJECT_DIR$/Android-FloatWindow.iml" />
       <module fileurl="file://$PROJECT_DIR$/FloatWindow.iml" filepath="$PROJECT_DIR$/FloatWindow.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
