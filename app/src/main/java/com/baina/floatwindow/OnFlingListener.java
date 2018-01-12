@@ -1,4 +1,4 @@
-package com.example.baina.controllconterdemo;
+package com.baina.floatwindow;
 
 /**
  * 滑动手势抽象类

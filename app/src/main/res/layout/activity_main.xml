@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    tools:context="com.example.baina.controllconterdemo.MainActivity">
+    tools:context="com.baina.floatwindow.MainActivity">
 
     <Button
         android:id="@+id/leftBt"
