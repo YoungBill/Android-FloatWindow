@@ -1,4 +1,4 @@
-package com.baina.floatwindow;
+package com.baina.floatwindowlib;
 
 import android.content.Context;
 import android.graphics.PixelFormat;

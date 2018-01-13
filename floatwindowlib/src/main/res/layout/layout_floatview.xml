@@ -7,6 +7,6 @@
         android:id="@+id/touchBt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/clover_10" />
+        android:src="@drawable/clover_10" />
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.baina.floatwindow;
+package com.baina.floatwindowlib;
 
 import android.content.Context;
 import android.util.Log;
@@ -28,10 +28,10 @@ public class FloatView extends LinearLayout {
     public FloatView(Context context) {
         super(context);
         mContext = context;
-        LayoutInflater.from(mContext).inflate(R.layout.layout_add_left, this);
+        LayoutInflater.from(mContext).inflate(R.layout.layout_floatview, this);
         mTouchBt = findViewById(R.id.touchBt);
         mGestureDetector = new GestureDetector(mContext, new FloatViewOnGestureListener());
-        mTouchBt.setOnTouchListener(new View.OnTouchListener() {
+        mTouchBt.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 mGestureDetector.onTouchEvent(motionEvent);
@@ -43,11 +43,11 @@ public class FloatView extends LinearLayout {
     public FloatView(Context context, OnFlingListener flingListener) {
         super(context);
         mContext = context;
-        LayoutInflater.from(mContext).inflate(R.layout.layout_add_left, this);
+        LayoutInflater.from(mContext).inflate(R.layout.layout_floatview, this);
         mTouchBt = findViewById(R.id.touchBt);
         mOnFlingListener = flingListener;
         mGestureDetector = new GestureDetector(mContext, new FloatViewOnGestureListener(mOnFlingListener));
-        mTouchBt.setOnTouchListener(new View.OnTouchListener() {
+        mTouchBt.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 mGestureDetector.onTouchEvent(motionEvent);

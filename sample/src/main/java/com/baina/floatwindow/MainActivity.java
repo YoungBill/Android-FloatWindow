@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
+import com.baina.floatwindowlib.FloatWindow;
+
 public class MainActivity extends Activity {
 
     private static final int OVERLAY_PERMISSION_REQ_CODE = 0x001;

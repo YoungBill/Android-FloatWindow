@@ -1,4 +1,4 @@
-package com.baina.floatwindow;
+package com.baina.floatwindowlib;
 
 /**
  * 滑动手势抽象类
