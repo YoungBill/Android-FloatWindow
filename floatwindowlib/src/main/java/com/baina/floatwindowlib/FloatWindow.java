@@ -72,7 +72,6 @@ public class FloatWindow {
                     mTouchLocation = LOCATION_BOTTOM;
                     break;
             }
-            attachFloatViewToWindow();
         }
         return floatWindow;
     }
@@ -119,11 +118,15 @@ public class FloatWindow {
                 mTouchLocation = LOCATION_BOTTOM;
                 break;
         }
+    }
+
+    public void show() {
         attachFloatViewToWindow();
     }
 
-    public PopupWindow getPopupWindow() {
-        return mPopupWindow;
+    public void dismiss() {
+        if (mPopupWindow != null)
+            mPopupWindow.dismiss();
     }
 
     private void showWindow() {
@@ -145,6 +148,10 @@ public class FloatWindow {
      * attach floatView to window
      */
     private static void attachFloatViewToWindow() {
+        if (mFloatView == null)
+            throw new IllegalStateException("FloatView can not be null");
+        if (mParams == null)
+            throw new IllegalStateException("WindowManager.LayoutParams can not be null");
         try {
             mWindowManager.updateViewLayout(mFloatView, mParams);
         } catch (IllegalArgumentException e) {

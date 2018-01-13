@@ -4,4 +4,6 @@
     <string name="right">right</string>
     <string name="bottom">bottom</string>
     <string name="pressme">press me!</string>
+    <string name="getwindowdirectly">GetWindowDirectly</string>
+    <string name="getwindowsetlocation">GetWindowSetLocation</string>
 </resources>

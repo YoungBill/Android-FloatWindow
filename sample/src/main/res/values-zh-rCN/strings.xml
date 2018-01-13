@@ -5,4 +5,6 @@
     <string name="right">右边</string>
     <string name="bottom">底部</string>
     <string name="pressme">点我啊!</string>
+    <string name="getwindowdirectly">直接得到floatwindow</string>
+    <string name="getwindowsetlocation">通过设置位置得到floatwindow</string>
 </resources>

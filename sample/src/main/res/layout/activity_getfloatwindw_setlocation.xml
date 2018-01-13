@@ -9,12 +9,12 @@
     tools:context="com.baina.floatwindow.MainActivity">
 
     <Button
-        android:id="@+id/directlyBt"
+        android:id="@+id/leftBt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:onClick="OnClick"
-        android:text="@string/getwindowdirectly"
+        android:text="@string/left"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -22,17 +22,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/setLocationBt"
+        android:id="@+id/rightBt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/directlyBt"
+        android:layout_below="@id/leftBt"
         android:layout_marginTop="50dp"
         android:onClick="OnClick"
-        android:text="@string/getwindowsetlocation"
+        android:text="@string/right"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bottomBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rightBt"
+        android:layout_marginTop="50dp"
+        android:onClick="OnClick"
+        android:text="@string/bottom"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </RelativeLayout>
