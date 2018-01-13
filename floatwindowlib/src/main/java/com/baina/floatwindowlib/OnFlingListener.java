@@ -15,4 +15,7 @@ public abstract class OnFlingListener {
 
     void onSlideRight() {
     }
+
+    void onMove(float moveX, float moveY) {
+    }
 }
