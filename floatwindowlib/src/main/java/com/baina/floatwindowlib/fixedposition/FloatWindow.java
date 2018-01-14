@@ -25,7 +25,7 @@ public class FloatWindow {
     public static final int LOCATION_RIGHT = 0x002;
     public static final int LOCATION_BOTTOM = 0x003;
     private static final String TAG = FloatWindow.class.getSimpleName();
-    private static FloatWindow floatWindow;
+    private static FloatWindow mFloatWindow;
     private static WindowManager.LayoutParams mParams = null;
     private static WindowManager mWindowManager = null;
     private static FloatView mFloatView;
@@ -33,19 +33,21 @@ public class FloatWindow {
 
     private Context mContext;
     private PopupWindow mPopupWindow;
+    private View mPopupView;
 
     public FloatWindow(Context context, int touchLocation, View popView) {
         mContext = context;
         mTouchLocation = touchLocation;
+        mPopupView = popView;
         initFloatView(context);
-        initPopupWindow(popView);
-        showWindow();
+        initPopupWindow(mPopupView);
     }
 
     public FloatWindow(Context context, View popView) {
         mContext = context;
+        mPopupView = popView;
         initFloatView(context);
-        initPopupWindow(popView);
+        initPopupWindow(mPopupView);
     }
 
     /**
@@ -57,32 +59,18 @@ public class FloatWindow {
      * @return
      */
     public static FloatWindow getFloatWindow(Context context, int touchLocation, View popView) {
-        if (floatWindow == null) {
+        if (mFloatWindow == null) {
             synchronized (FloatWindow.class) {
-                if (floatWindow == null) {
+                if (mFloatWindow == null) {
                     initFloatViewWindow(context);
-                    floatWindow = new FloatWindow(context, touchLocation, popView);
+                    resolveTouchLocation(touchLocation);
+                    mFloatWindow = new FloatWindow(context, touchLocation, popView);
                 }
             }
         } else {
-            mParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
-            mParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
-            switch (touchLocation) {
-                case LOCATION_LEFT:
-                    mParams.gravity = Gravity.CENTER_VERTICAL | Gravity.START;
-                    mTouchLocation = LOCATION_LEFT;
-                    break;
-                case LOCATION_RIGHT:
-                    mParams.gravity = Gravity.CENTER_VERTICAL | Gravity.END;
-                    mTouchLocation = LOCATION_RIGHT;
-                    break;
-                case LOCATION_BOTTOM:
-                    mParams.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
-                    mTouchLocation = LOCATION_BOTTOM;
-                    break;
-            }
+            resolveTouchLocation(touchLocation);
         }
-        return floatWindow;
+        return mFloatWindow;
     }
 
     /**
@@ -93,26 +81,23 @@ public class FloatWindow {
      * @return
      */
     public static FloatWindow getFloatWindow(Context context, View popView) {
-        if (floatWindow == null) {
+        if (mFloatWindow == null) {
             synchronized (FloatWindow.class) {
-                if (floatWindow == null) {
+                if (mFloatWindow == null) {
                     initFloatViewWindow(context);
-                    floatWindow = new FloatWindow(context, popView);
+                    mFloatWindow = new FloatWindow(context, popView);
                 }
             }
         }
-        return floatWindow;
+        return mFloatWindow;
     }
 
     /**
-     * 设置touch按钮位置
+     * 解析touchButton位置
      *
-     * @param touchLocation，touch按钮位置
+     * @param touchLocation，touch按钮所在位置
      */
-    public void setTouchLocation(int touchLocation) {
-        mTouchLocation = touchLocation;
-        mParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
-        mParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
+    private static void resolveTouchLocation(int touchLocation) {
         switch (touchLocation) {
             case LOCATION_LEFT:
                 mParams.gravity = Gravity.CENTER_VERTICAL | Gravity.START;
@@ -129,28 +114,34 @@ public class FloatWindow {
         }
     }
 
+    /**
+     * 设置touch按钮位置
+     *
+     * @param touchLocation，touch按钮位置
+     */
+    public FloatWindow setTouchLocation(int touchLocation) {
+        if (mFloatWindow == null)
+            throw new IllegalStateException("FloatWindow can not be null");
+        mTouchLocation = touchLocation;
+        resolveTouchLocation(touchLocation);
+        return mFloatWindow;
+    }
+
+    public FloatWindow setPopupView(View popupView) {
+        if (mFloatWindow == null)
+            throw new IllegalStateException("FloatWindow can not be null");
+        mPopupView = popupView;
+        mPopupWindow.setContentView(popupView);
+        return mFloatWindow;
+    }
+
     public void show() {
         attachFloatViewToWindow();
     }
 
-    public void dismiss() {
+    public void dismissPopupWindow() {
         if (mPopupWindow != null)
             mPopupWindow.dismiss();
-    }
-
-    private void showWindow() {
-        switch (mTouchLocation) {
-            case LOCATION_LEFT:
-                mParams.gravity = Gravity.CENTER_VERTICAL | Gravity.START;
-                break;
-            case LOCATION_RIGHT:
-                mParams.gravity = Gravity.CENTER_VERTICAL | Gravity.END;
-                break;
-            case LOCATION_BOTTOM:
-                mParams.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
-                break;
-        }
-        mWindowManager.addView(mFloatView, mParams);
     }
 
     /**

@@ -63,31 +63,33 @@ public class GetFloatWindowDirectlyActivity extends Activity {
                 contentView.findViewById(R.id.testBt).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        leftFloatWindow.dismiss();
+                        leftFloatWindow.dismissPopupWindow();
                         Toast.makeText(GetFloatWindowDirectlyActivity.this, R.string.pressme, Toast.LENGTH_SHORT).show();
                     }
                 });
                 contentView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        leftFloatWindow.dismiss();
+                        leftFloatWindow.dismissPopupWindow();
                     }
                 });
                 break;
             case R.id.rightBt:
-                final FloatWindow rightFloatWindow = FloatWindow.getFloatWindow(GetFloatWindowDirectlyActivity.this, FloatWindow.LOCATION_RIGHT, contentView);
+                View contentViewNew = inflater.inflate(R.layout.layout_pop_test, null);
+                final FloatWindow rightFloatWindow = FloatWindow.getFloatWindow(GetFloatWindowDirectlyActivity.this, FloatWindow.LOCATION_RIGHT, contentViewNew);
+                rightFloatWindow.setPopupView(contentViewNew);
                 rightFloatWindow.show();
                 contentView.findViewById(R.id.testBt).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        rightFloatWindow.dismiss();
+                        rightFloatWindow.dismissPopupWindow();
                         Toast.makeText(GetFloatWindowDirectlyActivity.this, R.string.pressme, Toast.LENGTH_SHORT).show();
                     }
                 });
                 contentView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        rightFloatWindow.dismiss();
+                        rightFloatWindow.dismissPopupWindow();
                     }
                 });
                 break;
@@ -97,14 +99,14 @@ public class GetFloatWindowDirectlyActivity extends Activity {
                 contentView.findViewById(R.id.testBt).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        bottomFloatWindow.dismiss();
+                        bottomFloatWindow.dismissPopupWindow();
                         Toast.makeText(GetFloatWindowDirectlyActivity.this, R.string.pressme, Toast.LENGTH_SHORT).show();
                     }
                 });
                 contentView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        bottomFloatWindow.dismiss();
+                        bottomFloatWindow.dismissPopupWindow();
                     }
                 });
                 break;

@@ -60,14 +60,14 @@ public class GetFloatWindowSetLocationActivity extends Activity {
         contentView.findViewById(R.id.testBt).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                floatWindow.dismiss();
+                floatWindow.dismissPopupWindow();
                 Toast.makeText(GetFloatWindowSetLocationActivity.this, R.string.pressme, Toast.LENGTH_SHORT).show();
             }
         });
         contentView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                floatWindow.dismiss();
+                floatWindow.dismissPopupWindow();
             }
         });
         switch (view.getId()) {
