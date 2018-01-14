@@ -17,11 +17,11 @@ public class MainActivity extends Activity {
 
     public void OnClick(View view) {
         switch (view.getId()) {
-            case R.id.directlyBt:
-                startActivity(new Intent(MainActivity.this, GetFloatWindowDirectlyActivity.class));
+            case R.id.getFixedPositionWindowBt:
+                startActivity(new Intent(MainActivity.this, GetFloatWindowFixedPositionActivity.class));
                 break;
-            case R.id.setLocationBt:
-                startActivity(new Intent(MainActivity.this, GetFloatWindowSetLocationActivity.class));
+            case R.id.getFreePositionWindowBt:
+                startActivity(new Intent(MainActivity.this, GetFloatWindowFreePositionActivity.class));
                 break;
         }
     }

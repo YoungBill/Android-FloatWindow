@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
-import com.baina.floatwindowlib.FloatWindow;
+import com.baina.floatwindowlib.fixedposition.FloatWindow;
 
 public class GetFloatWindowSetLocationActivity extends Activity {
 
@@ -19,7 +19,7 @@ public class GetFloatWindowSetLocationActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_getfloatwindw_setlocation);
+        setContentView(R.layout.activity_getfloatwindw_fixedposition_setlocation);
     }
 
     @Override

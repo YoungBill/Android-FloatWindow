@@ -5,6 +5,9 @@
     <string name="right">右边</string>
     <string name="bottom">底部</string>
     <string name="pressme">点我啊!</string>
-    <string name="getwindowdirectly">直接得到floatwindow</string>
-    <string name="getwindowsetlocation">通过设置位置得到floatwindow</string>
+    <string name="get_window_fixedposition">得到固定几个位置的悬浮窗</string>
+    <string name="get_window_freeposition">得到自由拖动的悬浮窗</string>
+    <string name="get_window_directly">直接得到floatwindow</string>
+    <string name="get_window_setlocation">通过设置位置得到floatwindow</string>
+    <string name="showwindow">显示悬浮窗</string>
 </resources>

@@ -1,5 +1,6 @@
-package com.baina.floatwindowlib;
+package com.baina.floatwindowlib.fixedposition;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -8,6 +9,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.baina.floatwindowlib.OnFlingListener;
+import com.baina.floatwindowlib.R;
 
 /**
  * Created by baina on 17-12-28.
@@ -25,25 +29,11 @@ public class FloatView extends LinearLayout {
     private GestureDetector mGestureDetector;
     private OnFlingListener mOnFlingListener;
 
-    public FloatView(Context context) {
-        super(context);
-        mContext = context;
-        LayoutInflater.from(mContext).inflate(R.layout.layout_floatview, this);
-        mTouchBt = findViewById(R.id.touchBt);
-        mGestureDetector = new GestureDetector(mContext, new FloatViewOnGestureListener());
-        mTouchBt.setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                mGestureDetector.onTouchEvent(motionEvent);
-                return false;
-            }
-        });
-    }
-
+    @SuppressLint("ClickableViewAccessibility")
     public FloatView(Context context, OnFlingListener flingListener) {
         super(context);
         mContext = context;
-        LayoutInflater.from(mContext).inflate(R.layout.layout_floatview, this);
+        LayoutInflater.from(mContext).inflate(R.layout.layout_floatview_fixedposition, this);
         mTouchBt = findViewById(R.id.touchBt);
         mOnFlingListener = flingListener;
         mGestureDetector = new GestureDetector(mContext, new FloatViewOnGestureListener(mOnFlingListener));
@@ -51,25 +41,16 @@ public class FloatView extends LinearLayout {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 mGestureDetector.onTouchEvent(motionEvent);
-                return false;
-
+                return true;
             }
         });
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return mGestureDetector.onTouchEvent(event);
-    }
-
     class FloatViewOnGestureListener extends GestureDetector.SimpleOnGestureListener {
 
-        private static final String TAG = "MyOnGestureListener";
+        private final String TAG = FloatViewOnGestureListener.class.getSimpleName();
 
         private OnFlingListener mFlingListener;
-
-        public FloatViewOnGestureListener() {
-        }
 
         public FloatViewOnGestureListener(OnFlingListener flingListener) {
             mFlingListener = flingListener;
@@ -124,5 +105,14 @@ public class FloatView extends LinearLayout {
             }
             return super.onFling(e1, e2, velocityX, velocityY);
         }
+
+        @Override
+        public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+            Log.d(TAG, "onScroll, current position:(" + e2.getRawX() + "," + e2.getRawY() + ")");
+//            if (mFlingListener != null)
+//                    mFlingListener.onMove(-distanceX, -distanceY);
+            return super.onScroll(e1, e2, distanceX, distanceY);
+        }
+
     }
 }

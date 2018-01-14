@@ -11,6 +11,9 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 
+import com.baina.floatwindowlib.fixedposition.FloatView;
+import com.baina.floatwindowlib.fixedposition.FloatWindow;
+
 /**
  * Created by chentao on 2018/1/14.
  * 自由位置的悬浮窗

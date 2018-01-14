@@ -1,7 +1,8 @@
-package com.baina.floatwindowlib;
+package com.baina.floatwindowlib.fixedposition;
 
 import android.content.Context;
 import android.graphics.PixelFormat;
+import android.os.Build;
 import android.os.Handler;
 import android.util.Log;
 import android.view.Gravity;
@@ -10,6 +11,14 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 
+import com.baina.floatwindowlib.DeviceUtils;
+import com.baina.floatwindowlib.OnFlingListener;
+import com.baina.floatwindowlib.R;
+
+/**
+ * Created by baina on 17-12-28.
+ * 固定几个位置的悬浮窗
+ */
 public class FloatWindow {
 
     public static final int LOCATION_LEFT = 0x001;
@@ -175,7 +184,11 @@ public class FloatWindow {
         mParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
                 | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_LAYOUT_INSET_DECOR
                 | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
-        mParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            mParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+        } else {
+            mParams.type = WindowManager.LayoutParams.TYPE_PHONE;
+        }
         mParams.format = PixelFormat.RGBA_8888;
     }
 

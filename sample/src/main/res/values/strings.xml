@@ -4,6 +4,9 @@
     <string name="right">right</string>
     <string name="bottom">bottom</string>
     <string name="pressme">press me!</string>
-    <string name="getwindowdirectly">GetWindowDirectly</string>
-    <string name="getwindowsetlocation">GetWindowSetLocation</string>
+    <string name="get_window_fixedposition">GetFixedPositionWindow</string>
+    <string name="get_window_freeposition">GetFreePositionWindow</string>
+    <string name="get_window_directly">GetWindowDirectly</string>
+    <string name="get_window_setlocation">GetWindowSetLocation</string>
+    <string name="showwindow">ShowFloatWindow</string>
 </resources>

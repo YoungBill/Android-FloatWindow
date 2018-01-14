@@ -9,12 +9,12 @@
     tools:context="com.baina.floatwindow.MainActivity">
 
     <Button
-        android:id="@+id/getFixedPositionWindowBt"
+        android:id="@+id/directlyBt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:onClick="OnClick"
-        android:text="@string/get_window_fixedposition"
+        android:text="@string/get_window_directly"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -22,13 +22,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/getFreePositionWindowBt"
+        android:id="@+id/setLocationBt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/getFixedPositionWindowBt"
+        android:layout_below="@id/directlyBt"
         android:layout_marginTop="50dp"
         android:onClick="OnClick"
-        android:text="@string/get_window_freeposition"
+        android:text="@string/get_window_setlocation"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

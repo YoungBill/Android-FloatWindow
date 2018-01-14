@@ -4,18 +4,18 @@ package com.baina.floatwindowlib;
  * 滑动手势抽象类
  */
 public abstract class OnFlingListener {
-    void onSlideUp() {
+    public void onSlideUp() {
     }
 
-    void onSlideDown() {
+    public void onSlideDown() {
     }
 
-    void onSlideLeft() {
+    public void onSlideLeft() {
     }
 
-    void onSlideRight() {
+    public void onSlideRight() {
     }
 
-    void onMove(float moveX, float moveY) {
+    public void onMove(float moveX, float moveY) {
     }
 }
