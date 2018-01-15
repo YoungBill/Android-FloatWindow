@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.baina.floatwindowlib.OnFlingListener;
+import com.baina.floatwindowlib.OnTouchButtonListener;
 import com.baina.floatwindowlib.R;
 
 /**
@@ -25,6 +26,7 @@ public class DraggableFloatView extends LinearLayout {
     private Context mContext;
     private ImageView mTouchBt;
     private OnFlingListener mOnFlingListener;
+    private OnTouchButtonListener mTouchButtonListener;
 
     public DraggableFloatView(Context context, OnFlingListener flingListener) {
         super(context);
@@ -51,9 +53,24 @@ public class DraggableFloatView extends LinearLayout {
                     downX = moveX;
                     downY = moveY;
                 }
+                if (mTouchButtonListener != null) {
+                    mTouchButtonListener.OnTouch(view, motionEvent);
+                }
                 return true;
-
             }
         });
+
+        mTouchBt.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mTouchButtonListener != null) {
+                    mTouchButtonListener.onClick(v);
+                }
+            }
+        });
+    }
+
+    public void setOnTouchButtonListener(OnTouchButtonListener touchButtonListener) {
+        mTouchButtonListener = touchButtonListener;
     }
 }

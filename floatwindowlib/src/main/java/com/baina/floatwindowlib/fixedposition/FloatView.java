@@ -2,6 +2,9 @@ package com.baina.floatwindowlib.fixedposition;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
@@ -44,6 +47,24 @@ public class FloatView extends LinearLayout {
                 return true;
             }
         });
+    }
+
+    public void setTouchImageBitmap(Bitmap bitmap) {
+        mTouchBt.setImageBitmap(bitmap);
+    }
+
+    public void setTouchImageDrawable(Drawable drawable) {
+        mTouchBt.setImageDrawable(drawable);
+    }
+
+    public void setTouchImageResource(int resId) {
+        mTouchBt.setImageResource(resId);
+
+    }
+
+    public void setTouchImageURI(Uri uri) {
+        mTouchBt.setImageURI(uri);
+
     }
 
     class FloatViewOnGestureListener extends GestureDetector.SimpleOnGestureListener {

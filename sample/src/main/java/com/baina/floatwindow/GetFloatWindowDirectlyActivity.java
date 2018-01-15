@@ -59,6 +59,7 @@ public class GetFloatWindowDirectlyActivity extends Activity {
             case R.id.leftBt:
                 //这是第一种方法得到弹窗
                 final FloatWindow leftFloatWindow = FloatWindow.getFloatWindow(GetFloatWindowDirectlyActivity.this, FloatWindow.LOCATION_LEFT, contentView);
+                leftFloatWindow.setTouchImageResource(R.drawable.clover_10);
                 leftFloatWindow.show();
                 contentView.findViewById(R.id.testBt).setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -78,6 +79,7 @@ public class GetFloatWindowDirectlyActivity extends Activity {
                 View contentViewNew = inflater.inflate(R.layout.layout_pop_test, null);
                 final FloatWindow rightFloatWindow = FloatWindow.getFloatWindow(GetFloatWindowDirectlyActivity.this, FloatWindow.LOCATION_RIGHT, contentViewNew);
                 rightFloatWindow.setPopupView(contentViewNew);
+                rightFloatWindow.setTouchImageResource(R.drawable.touch);
                 rightFloatWindow.show();
                 contentView.findViewById(R.id.testBt).setOnClickListener(new View.OnClickListener() {
                     @Override

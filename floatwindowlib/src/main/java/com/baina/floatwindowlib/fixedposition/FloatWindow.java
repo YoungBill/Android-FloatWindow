@@ -1,7 +1,10 @@
 package com.baina.floatwindowlib.fixedposition;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.PixelFormat;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
 import android.util.Log;
@@ -127,11 +130,59 @@ public class FloatWindow {
         return mFloatWindow;
     }
 
+    /**
+     * 设置弹窗内容
+     *
+     * @param popupView，弹窗view
+     * @return
+     */
     public FloatWindow setPopupView(View popupView) {
         if (mFloatWindow == null)
             throw new IllegalStateException("FloatWindow can not be null");
         mPopupView = popupView;
         mPopupWindow.setContentView(popupView);
+        return mFloatWindow;
+    }
+
+    /**
+     * 设置TouchButton图片
+     *
+     * @param bitmap，图片源
+     * @return
+     */
+    public FloatWindow setTouchImageBitmap(Bitmap bitmap) {
+        if (mFloatWindow == null)
+            throw new IllegalStateException("FloatWindow can not be null");
+        if (bitmap == null)
+            throw new NullPointerException("Bitmap can not be null");
+        mFloatView.setTouchImageBitmap(bitmap);
+        return mFloatWindow;
+    }
+
+    public FloatWindow setTouchImageDrawable(Drawable drawable) {
+        if (mFloatWindow == null)
+            throw new IllegalStateException("FloatWindow can not be null");
+        if (drawable == null)
+            throw new NullPointerException("Drawable can not be null");
+        mFloatView.setTouchImageDrawable(drawable);
+        return mFloatWindow;
+    }
+
+    public FloatWindow setTouchImageResource(int resId) {
+        if (mFloatWindow == null)
+            throw new IllegalStateException("FloatWindow can not be null");
+        if (resId == 0)
+            throw new NullPointerException("ResourceId can not be null");
+        mFloatView.setTouchImageResource(resId);
+        return mFloatWindow;
+    }
+
+    public FloatWindow setTouchImageUri(Uri uri) {
+        if (mFloatWindow == null)
+            throw new IllegalStateException("FloatWindow can not be null");
+        if (uri == null)
+            throw new NullPointerException("Uri can not be null");
+        mFloatView.setTouchImageURI(uri);
         return mFloatWindow;
     }
 
