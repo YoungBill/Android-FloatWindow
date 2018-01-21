@@ -6,9 +6,11 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
+import com.baina.floatwindowlib.freeposition.DraggableFloatView;
 import com.baina.floatwindowlib.freeposition.DraggableFloatWindow;
 
 /**
@@ -60,6 +62,12 @@ public class GetFloatWindowFreePositionActivity extends Activity {
             case R.id.showBt:
                 DraggableFloatWindow floatWindow = DraggableFloatWindow.getDraggableFloatWindow(GetFloatWindowFreePositionActivity.this, null);
                 floatWindow.show();
+                floatWindow.setOnTouchButtonListener(new DraggableFloatView.OnTouchButtonClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(GetFloatWindowFreePositionActivity.this, R.string.tip_click, Toast.LENGTH_SHORT).show();
+                    }
+                });
                 break;
         }
     }

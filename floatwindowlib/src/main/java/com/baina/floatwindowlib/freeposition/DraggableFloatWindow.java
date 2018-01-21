@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.baina.floatwindowlib.OnFlingListener;
-import com.baina.floatwindowlib.OnTouchButtonListener;
 
 
 /**
@@ -50,8 +49,8 @@ public class DraggableFloatWindow {
         return mDraggableFloatWindow;
     }
 
-    public void setOnTouchButtonListener(OnTouchButtonListener touchButtonListener) {
-        mDraggableFloatView.setOnTouchButtonListener(touchButtonListener);
+    public void setOnTouchButtonListener(DraggableFloatView.OnTouchButtonClickListener touchButtonListener) {
+        mDraggableFloatView.setTouchButtonClickListener(touchButtonListener);
     }
 
 
