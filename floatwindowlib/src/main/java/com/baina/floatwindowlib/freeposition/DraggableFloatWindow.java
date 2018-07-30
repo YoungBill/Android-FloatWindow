@@ -59,7 +59,7 @@ public class DraggableFloatWindow {
     }
 
     public void dismiss() {
-
+        detachFloatViewFromWindow();
     }
 
     /**
@@ -77,6 +77,13 @@ public class DraggableFloatWindow {
             //if floatView not attached to window,addView
             mWindowManager.addView(mDraggableFloatView, mParams);
         }
+    }
+
+    /**
+     * detach floatView from window
+     */
+    private static void detachFloatViewFromWindow() {
+        // TODO: 18-7-30 @lhr2528 you can fix issue 2 here
     }
 
     /**

@@ -9,5 +9,6 @@
     <string name="get_window_directly">GetWindowDirectly</string>
     <string name="get_window_setlocation">GetWindowSetLocation</string>
     <string name="showwindow">ShowFloatWindow</string>
+    <string name="dimisswindow">DismissFloatWindow</string>
     <string name="tip_click">This is the click event, where you can do what you want to do</string>
 </resources>

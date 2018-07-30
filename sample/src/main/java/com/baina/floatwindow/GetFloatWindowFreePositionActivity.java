@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -20,6 +19,8 @@ import com.baina.floatwindowlib.freeposition.DraggableFloatWindow;
 public class GetFloatWindowFreePositionActivity extends Activity {
 
     private static final int OVERLAY_PERMISSION_REQ_CODE = 0x001;
+
+    private DraggableFloatWindow mFloatWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,14 +61,20 @@ public class GetFloatWindowFreePositionActivity extends Activity {
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.showBt:
-                DraggableFloatWindow floatWindow = DraggableFloatWindow.getDraggableFloatWindow(GetFloatWindowFreePositionActivity.this, null);
-                floatWindow.show();
-                floatWindow.setOnTouchButtonListener(new DraggableFloatView.OnTouchButtonClickListener() {
+                mFloatWindow = DraggableFloatWindow.getDraggableFloatWindow(GetFloatWindowFreePositionActivity.this, null);
+                mFloatWindow.show();
+                mFloatWindow.setOnTouchButtonListener(new DraggableFloatView.OnTouchButtonClickListener() {
                     @Override
                     public void onClick(View view) {
                         Toast.makeText(GetFloatWindowFreePositionActivity.this, R.string.tip_click, Toast.LENGTH_SHORT).show();
                     }
                 });
+                break;
+            case R.id.dismissBt:
+                // @lhr2528 you can fix issue 2 here
+                if (mFloatWindow != null) {
+                    mFloatWindow.dismiss();
+                }
                 break;
         }
     }

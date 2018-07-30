@@ -10,5 +10,6 @@
     <string name="get_window_directly">直接得到floatwindow</string>
     <string name="get_window_setlocation">通过设置位置得到floatwindow</string>
     <string name="showwindow">显示悬浮窗</string>
+    <string name="dimisswindow">关闭悬浮窗</string>
     <string name="tip_click">这是click事件，你在这里可以做你想做的事情</string>
 </resources>
