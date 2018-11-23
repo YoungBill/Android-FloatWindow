@@ -29,6 +29,4 @@ The principle is very simple, is to borrow WindowManager this management class t
 3.Pop-up window easily
 ## preview
 <img src="https://github.com/YoungBill/FloatWindow/blob/master/Screenshots/preview.gif"/><br/>
-## FloatWindow Examples On The Market
-[Download the free app](https://market.android.com/details?id=com.launcher.find.x.pro)
 ## 结束 
