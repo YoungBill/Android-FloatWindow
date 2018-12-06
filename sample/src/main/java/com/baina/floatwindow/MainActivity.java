@@ -50,6 +50,9 @@ public class MainActivity extends Activity {
             case R.id.getFreePositionWindowBt:
                 startActivity(new Intent(MainActivity.this, GetFloatWindowFreePositionActivity.class));
                 break;
+            case R.id.getCutoutWindowBt:
+                startActivity(new Intent(MainActivity.this, GetWindowCutoutActivity.class));
+                break;
         }
     }
 

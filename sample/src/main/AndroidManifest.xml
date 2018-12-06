@@ -29,6 +29,7 @@
         <activity android:name=".GetFloatWindowDirectlyActivity" />
 
         <activity android:name=".GetFloatWindowSetLocationActivity" />
+        <activity android:name=".GetWindowCutoutActivity" />
     </application>
 
 </manifest>
