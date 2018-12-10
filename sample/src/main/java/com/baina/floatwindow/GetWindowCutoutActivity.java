@@ -66,6 +66,16 @@ public class GetWindowCutoutActivity extends Activity {
                     mCutoutWindow.dismiss();
                 }
                 break;
+            case R.id.scaleUpCutoutBt:
+                if (mCutoutWindow != null) {
+                    mCutoutWindow.scale(1.5f);
+                }
+                break;
+            case R.id.scaleDownCutoutBt:
+                if (mCutoutWindow != null) {
+                    mCutoutWindow.scale(0.5f);
+                }
+                break;
         }
     }
 

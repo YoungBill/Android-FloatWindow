@@ -15,4 +15,6 @@
     <string name="tip_click">这是click事件，你在这里可以做你想做的事情</string>
     <string name="show_cutout">显示</string>
     <string name="dismiss_cutout">关闭</string>
+    <string name="scale_up">放大</string>
+    <string name="scale_down">缩小</string>
 </resources>

@@ -29,6 +29,24 @@
             android:onClick="OnClick"
             android:text="@string/dismiss_cutout"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/scaleUpCutoutBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:onClick="OnClick"
+            android:text="@string/scale_up"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/scaleDownCutoutBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:onClick="OnClick"
+            android:text="@string/scale_down"
+            android:textAllCaps="false" />
     </LinearLayout>
 
 </RelativeLayout>

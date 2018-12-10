@@ -48,6 +48,12 @@ public class CutoutWindow {
         detachCutoutViewFromWindow();
     }
 
+    public void scale(float scale) {
+        if (sCutoutView == null)
+            throw new IllegalStateException("CutoutView can not be null");
+        sCutoutView.setScaleX(scale);
+    }
+
     /**
      * attach floatView to window
      */
