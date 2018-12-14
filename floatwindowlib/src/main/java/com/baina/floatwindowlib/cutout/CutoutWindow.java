@@ -103,7 +103,7 @@ public class CutoutWindow {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             sParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
         } else {
-            sParams.type = WindowManager.LayoutParams.TYPE_PHONE;
+            sParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY;
         }
         //The default position is vertically to the right
 //        sParams.gravity = Gravity.CENTER_VERTICAL | Gravity.END;
