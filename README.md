@@ -18,11 +18,11 @@ NewFloatMainWindow.getFloatMainWindow(MainActivity.this, NewFloatMainWindow.LOCA
 3.实现悬浮窗如此简单
 ## readme-en
 Android custom floating window
-The principle is very simple, is to borrow WindowManager this management class to achieve.
+The theory is quite simple, implemented by borrowing from the WindowManager class.
 <br/>
 1.First, add permission to use AndroidManifest.xml:uses-permission android: name = "android.permission.SYSTEM_ALERT_WINDOW"
 <br/>
-2.Two lines of code to achieve custom pop-up 
+2. The following two lines of code will implement custom pop-up: 
 <br/>viewView contentView = inflater.inflate (R.layout.layout_pop, null);
 <br/>NewFloatMainWindow.getFloatMainWindow (MainActivity.this, NewFloatMainWindow.LOCATION_LEFT, contentView);
 <br/>
